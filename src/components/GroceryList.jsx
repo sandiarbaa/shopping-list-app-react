@@ -5,11 +5,11 @@ function GroceryList({ items, onToggleChecked, onDeleteItem, sortedItems }) {
     <>
       {items.length > 0 ? (
         <div className="w-full mx-auto h-[230px] overflow-y-scroll">
-          <ol className="px-5">
+          <ol className="px-5 text-start">
             {sortedItems.map((item) => (
               <li
                 key={item.id}
-                className=" text-xl text-center flex items-center gap-x-2 py-3 border-y-[1px] border-slate-300"
+                className=" text-lg text-center flex items-center gap-x-2 py-3 border-y-[1px] border-slate-300"
               >
                 <input
                   type="checkbox"

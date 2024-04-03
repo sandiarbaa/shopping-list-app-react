@@ -32,7 +32,7 @@ function Form({ onAddItem }) {
       <select
         name="quantity"
         id="quantity"
-        className="px-2 py-1 bg-orange-400 rounded-md text-white hover:bg-orange-500"
+        className=" ps-1 bg-orange-400 rounded-md text-white hover:bg-orange-500 w-11"
         value={quantity}
         onChange={(e) => setQuantity(Number(e.target.value))}
       >
@@ -43,7 +43,7 @@ function Form({ onAddItem }) {
         type="text"
         name="name"
         id="name"
-        className="rounded-md border border-orange-500 px-1.5 text-black outline-orange-500"
+        className="rounded-md border border-orange-500 px-1.5 text-black outline-orange-500 w-40"
         placeholder="Tambahkan barang.."
         autoComplete="off"
         value={name}

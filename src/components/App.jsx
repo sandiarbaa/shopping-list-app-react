@@ -8,20 +8,20 @@ import SortingType from "./SortingType";
 const groceryItems = [
   {
     id: 1,
-    name: "kopi",
-    quantity: 5,
+    name: "Kopi ABC",
+    quantity: 2,
     checked: false,
   },
   {
     id: 2,
-    name: "gula",
+    name: "Gula Pasir",
     quantity: 3,
     checked: false,
   },
   {
     id: 3,
-    name: "Ayam",
-    quantity: 2,
+    name: "Susu Stroberi",
+    quantity: 4,
     checked: false,
   },
 ];
@@ -79,7 +79,7 @@ function App() {
 
   return (
     <main className="w-full min-h-screen flex justify-center items-center bg-slate-200">
-      <div className="w-[360px] h-[480px] bg-white border shadow rounded-lg flex flex-col justify-between">
+      <div className="w-[320px] h-[480px] bg-white border shadow rounded-lg flex flex-col justify-between">
         <div>
           <Header />
 

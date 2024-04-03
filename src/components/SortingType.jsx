@@ -1,10 +1,10 @@
 function SortingType({ onClearItem, sortBy, setSortBy }) {
   return (
     <>
-      <div className="my-5 w-full flex justify-center items-center gap-x-3">
+      <div className="my-5 w-full flex justify-center items-center gap-x-2">
         <span className="font-medium">Urutkan : </span>
         <select
-          className="px-2 py-1 w-40 bg-orange-400 rounded-md text-white hover:bg-orange-500"
+          className="px-2 py-1 w-32 bg-orange-400 rounded-md text-white hover:bg-orange-500"
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
         >
