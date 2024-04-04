@@ -8,20 +8,30 @@ import SortingType from "./SortingType";
 const groceryItems = [
   {
     id: 1,
-    name: "Kopi ABC",
-    quantity: 2,
+    name: "Kopi ABC Susu",
+    quantityNumber: 2,
+    quantityUnit: "Saset",
     checked: false,
   },
   {
     id: 2,
-    name: "Gula Pasir",
-    quantity: 3,
+    name: "Telur",
+    quantityNumber: 1,
+    quantityUnit: "1/2 Kg",
     checked: false,
   },
   {
     id: 3,
     name: "Susu Stroberi",
-    quantity: 4,
+    quantityNumber: 3,
+    quantityUnit: "Kotak",
+    checked: false,
+  },
+  {
+    id: 4,
+    name: "Aqua",
+    quantityNumber: 2,
+    quantityUnit: "Box",
     checked: false,
   },
 ];
@@ -52,8 +62,6 @@ function App() {
   const handleDeleteItem = (id) => {
     const deleteItem = items.filter((item) => item.id !== id);
     setItems(deleteItem);
-    // setItems((items) => items.filter((item) => item.id !== id));
-    // console.log(deleteItem);
   };
 
   // event untuk mengubah check true or false
@@ -65,11 +73,6 @@ function App() {
       return item;
     });
     setItems(updatedItems);
-    // setItems((items) =>
-    //   items.map((item) =>
-    //     item.id === id ? { ...item, checked: !item.checked } : item
-    //   )
-    // );
   };
 
   // event untuk clear list
@@ -78,8 +81,8 @@ function App() {
   };
 
   return (
-    <main className="w-full min-h-screen flex justify-center items-center bg-slate-200">
-      <div className="w-[320px] h-[480px] bg-white border shadow rounded-lg flex flex-col justify-between">
+    <main className="w-full shadow-md min-h-screen flex justify-center items-center bg-slate-200">
+      <div className="w-[330px] h-[520px] bg-white border shadow rounded-lg flex flex-col justify-between">
         <div>
           <Header />
 

@@ -4,6 +4,8 @@ function SortingType({ onClearItem, sortBy, setSortBy }) {
       <div className="my-5 w-full flex justify-center items-center gap-x-2">
         <span className="font-medium">Urutkan : </span>
         <select
+          name="sorting-type"
+          id="sorting-type"
           className="px-2 py-1 w-32 bg-orange-400 rounded-md text-white hover:bg-orange-500"
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
@@ -19,6 +21,8 @@ function SortingType({ onClearItem, sortBy, setSortBy }) {
           </option>
         </select>
         <button
+          name="clear-button"
+          id="clear-button"
           type="button"
           className="bg-orange-400 px-2 py-1 rounded-md text-white hover:bg-orange-500"
           onClick={onClearItem}

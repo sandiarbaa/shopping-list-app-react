@@ -4,18 +4,18 @@ function GroceryList({ items, onToggleChecked, onDeleteItem, sortedItems }) {
   return (
     <>
       {items.length > 0 ? (
-        <div className="w-full mx-auto h-[230px] overflow-y-scroll">
+        <div className="w-full mx-auto h-[247px] overflow-y-scroll">
           <ol className="px-5 text-start">
             {sortedItems.map((item) => (
               <li
                 key={item.id}
-                className=" text-lg text-center flex items-center gap-x-2 py-3 border-y-[1px] border-slate-300"
+                className="text-center flex items-center gap-x-2 py-3 border-y-[1px] border-slate-300"
               >
                 <input
                   type="checkbox"
                   name="checkItem"
-                  id="checkItem"
-                  style={{ width: "20px", height: "30px" }}
+                  id={`checkItem-${item.id}`}
+                  style={{ width: "17px", height: "17px" }}
                   onChange={() => onToggleChecked(item.id)}
                 />
                 <span
@@ -23,9 +23,22 @@ function GroceryList({ items, onToggleChecked, onDeleteItem, sortedItems }) {
                     textDecoration: item.checked ? "line-through" : "",
                   }}
                 >
-                  {item.quantity} {item.name}
+                  {item.quantityUnit === "1/4 Kg" ||
+                  item.quantityUnit === "1/2 Kg" ||
+                  item.quantityUnit === "1/4 L" ||
+                  item.quantityUnit === "1/2 L" ? (
+                    <span className="font-semibold">{item.quantityUnit}</span>
+                  ) : (
+                    <span className="font-semibold">
+                      {item.quantityNumber} {item.quantityUnit}
+                    </span>
+                  )}
+                  , {item.name}
                 </span>
-                <IoMdCloseCircle onClick={() => onDeleteItem(item.id)} />
+                <IoMdCloseCircle
+                  onClick={() => onDeleteItem(item.id)}
+                  className="text-xl"
+                />
               </li>
             ))}
           </ol>
